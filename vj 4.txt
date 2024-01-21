@@ -1,0 +1,45 @@
+class vj 4
+{
+    static void Main()
+    {
+        Console.WriteLine("Unesite broj n za Fibonaccijev niz:");
+
+        if (int.TryParse(Console.ReadLine(), out int n) && n >= 0)
+        {
+            long rezultat = Izracunaj(n);
+            Console.WriteLine($"F({n}) = {rezultat}");
+
+            }
+            else
+            {
+                Console.WriteLine("Unesite ispravan nenegativan broj.");
+            }
+    }
+
+    static long Izracunaj(int n)
+    {
+        if (n == 0)
+        {
+            return 0;
+            }
+            else if (n == 1)
+            {
+                return 1;
+                }   
+                else
+                {
+                    long a = 0;
+                    long b = 1;
+                    long temp;
+
+                    for (int i = 2; i <= n; i++)
+                    {
+                        temp = a + b;
+                        a = b;
+                        b = temp;
+                    }
+
+            return b;
+        }
+    }
+}
